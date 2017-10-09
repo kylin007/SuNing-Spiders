@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Object</id>
+    <version>3.1.0</version>
+    <title>Object</title>
+    <authors>Talles L &lt;talleslasmar@gmail.com&gt;</authors>
+    <owners>Talles L &lt;talleslasmar@gmail.com&gt;</owners>
+    <licenseUrl>http://fairlicense.org/</licenseUrl>
+    <projectUrl>https://github.com/tallesl/net-Object</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Automagically parses (with reflection) an AppSettings/Dictionary/DataRow/DataTable to a custom class of yours.</description>
+    <summary />
+    <tags>to object serialize deserialize datatable custom parse datarow automatically automagically appsettings namevaluecollection dictionary idictionary</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

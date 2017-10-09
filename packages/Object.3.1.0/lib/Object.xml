@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Object</name>
+    </assembly>
+    <members>
+        <member name="T:ObjectLibrary.ObjectExtensions">
+            <summary>
+            Extension methods for parsing a Dictionary/DataRow/DataTable to a custom class.
+            </summary>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObject``1(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Parses the NameValueCollection to the given type.
+            Throws PropertyNotFoundException if a key in the NameValueCollection is not found on the type.
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="namesValues">The NameValueCollection to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given NameValueCollection is null</exception>
+            <exception cref="T:ObjectLibrary.PropertyNotFoundException">
+            If a property in the NameValueCollection is not found on the type
+            </exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObjectSafe``1(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Parses the NameValueCollection to the given type.
+            Doesn't throw if a key in the NameValueCollection is not found on the type (ignores it).
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="namesValues">The NameValueCollection to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given NameValueCollection is null</exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObject``1(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Parses the dictionary to the given type.
+            Throws PropertyNotFoundException if a property in the dictionary is not found on the type.
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="dictionary">The dictionary to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given dictionary is null</exception>
+            <exception cref="T:ObjectLibrary.PropertyNotFoundException">
+            If a property in the dictionary is not found on the type
+            </exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObjectSafe``1(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Parses the dictionary to the given type.
+            Doesn't throw if a key in the dictionary is not found on the type (ignores it).
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="dictionary">The dictionary to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given dictionary is null</exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObject``1(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Parses the dictionary to the given type.
+            Throws PropertyNotFoundException if a property in the dictionary is not found on the type.
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="dictionary">The dictionary to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given dictionary is null</exception>
+            <exception cref="T:ObjectLibrary.CouldNotParseException">If the found value couldn't be parsed to the found type</exception>
+            <exception cref="T:ObjectLibrary.PropertyNotFoundException">
+            If a property in the dictionary is not found on the type
+            </exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObjectSafe``1(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Parses the dictionary to the given type.
+            Doesn't throw if a key in the dictionary is not found on the type (ignores it).
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="dictionary">The dictionary to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given dictionary is null</exception>
+            <exception cref="T:ObjectLibrary.CouldNotParseException">If the found value couldn't be parsed to the found type</exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObject``1(System.Data.DataRow)">
+            <summary>
+            Parses the DataRow to the given type.
+            Throws PropertyNotFoundException if a property in the DataRow is not found on the type.
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="row">The row to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given row is null</exception>
+            <exception cref="T:ObjectLibrary.PropertyNotFoundException">
+            If a property in the DataRow is not found on the type
+            </exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObjectSafe``1(System.Data.DataRow)">
+            <summary>
+            Parses the DataRow to the given type.
+            Doesn't throw if a property in the DataRow is not found on the type (ignores it).
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="row">The row to parse</param>
+            <returns>The parsed object</returns>
+            <exception cref="T:System.ArgumentNullException">If the given row is null</exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObject``1(System.Data.DataTable)">
+            <summary>
+            Parses the DataTable to an IEnumerable of the given type.
+            Throws PropertyNotFoundException if a property in the DataTable is not found on the type.
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="table">The table to parse</param>
+            <returns>The parsed objects</returns>
+            <exception cref="T:System.ArgumentNullException">If the given table is null</exception>
+            <exception cref="T:ObjectLibrary.PropertyNotFoundException">
+            If a property in the DataTable is not found on the type
+            </exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="M:ObjectLibrary.ObjectExtensions.ToObjectSafe``1(System.Data.DataTable)">
+            <summary>
+            Parses the DataTable to an IEnumerable of the given type.
+            Doesn't throw if a property in the DataTable is not found on the type (ignores it).
+            </summary>
+            <typeparam name="T">The type to parse to</typeparam>
+            <param name="table">The table to parse</param>
+            <returns>The parsed objects</returns>
+            <exception cref="T:System.ArgumentNullException">If the given table is null</exception>
+            <exception cref="T:ObjectLibrary.MismatchedTypesException">If the found types doesn't match</exception>
+        </member>
+        <member name="T:ObjectLibrary.CouldNotParseException">
+            <summary>
+            Couldn't parse the found string to the found type.
+            </summary>
+        </member>
+        <member name="T:ObjectLibrary.ObjectException">
+            <summary>
+            Base exception.
+            </summary>
+        </member>
+        <member name="T:ObjectLibrary.ValueNotFoundException">
+            <summary>
+            Couldn't find a value for a property.
+            </summary>
+        </member>
+        <member name="T:ObjectLibrary.MismatchedTypesException">
+            <summary>
+            The corresponding type in the specified class is different than the one found.
+            </summary>
+        </member>
+        <member name="T:ObjectLibrary.PropertyNotFoundException">
+            <summary>
+            Couldn't find a property in class.
+            </summary>
+        </member>
+    </members>
+</doc>
